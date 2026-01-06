@@ -34,3 +34,7 @@ Each session creates:
 Sessions are isolated from each other, so Claude can work on multiple tasks in parallel without conflicts.
 
 Session names support partial matching - `wt fg auth` will match `auth-feature` if it's the only match.
+
+## Inspiration
+
+This project was inspired by [claude-wt](https://github.com/jlowin/claude-wt).
