@@ -4,11 +4,20 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"runtime/debug"
 
 	"github.com/emilrex/wt/internal/cmd"
 )
 
 var version = "dev"
+
+func init() {
+	if version == "dev" {
+		if info, ok := debug.ReadBuildInfo(); ok && info.Main.Version != "" {
+			version = info.Main.Version
+		}
+	}
+}
 
 const usage = `wt - Manage isolated git worktrees for parallel Claude Code sessions
 
