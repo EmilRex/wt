@@ -8,6 +8,8 @@ import (
 	"github.com/emilrex/wt/internal/cmd"
 )
 
+var version = "dev"
+
 const usage = `wt - Manage isolated git worktrees for parallel Claude Code sessions
 
 Usage:
@@ -53,6 +55,8 @@ func main() {
 		runCd(os.Args[2:])
 	case "-h", "--help", "help":
 		fmt.Print(usage)
+	case "-v", "--version", "version":
+		fmt.Println(version)
 	default:
 		fmt.Fprintf(os.Stderr, "Unknown command: %s\n\n", command)
 		fmt.Print(usage)
