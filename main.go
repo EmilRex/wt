@@ -64,7 +64,7 @@ func runNew(args []string) {
 	fs := flag.NewFlagSet("new", flag.ExitOnError)
 	branch := fs.String("b", "", "Source branch to create worktree from")
 	fs.StringVar(branch, "branch", "", "Source branch to create worktree from")
-	fs.Parse(args)
+	_ = fs.Parse(args) // ExitOnError handles errors
 
 	opts := cmd.NewOptions{
 		SourceBranch: *branch,
@@ -105,7 +105,7 @@ func runRm(args []string) {
 	fs := flag.NewFlagSet("rm", flag.ExitOnError)
 	all := fs.Bool("a", false, "Remove all sessions")
 	fs.BoolVar(all, "all", false, "Remove all sessions")
-	fs.Parse(args)
+	_ = fs.Parse(args) // ExitOnError handles errors
 
 	opts := cmd.RmOptions{
 		All: *all,

@@ -25,15 +25,15 @@ func RunLs() error {
 	home, _ := os.UserHomeDir()
 
 	w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
-	fmt.Fprintln(w, "Session\tBranch\tPath")
-	fmt.Fprintln(w, "-------\t------\t----")
+	_, _ = fmt.Fprintln(w, "Session\tBranch\tPath")
+	_, _ = fmt.Fprintln(w, "-------\t------\t----")
 
 	for _, s := range sessions {
 		displayPath := s.Path
 		if home != "" && strings.HasPrefix(s.Path, home) {
 			displayPath = "~" + strings.TrimPrefix(s.Path, home)
 		}
-		fmt.Fprintf(w, "%s\t%s\t%s\n", s.Name, s.Branch, displayPath)
+		_, _ = fmt.Fprintf(w, "%s\t%s\t%s\n", s.Name, s.Branch, displayPath)
 	}
 
 	return w.Flush()
