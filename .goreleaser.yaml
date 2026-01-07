@@ -19,7 +19,7 @@ archives:
 changelog:
   use: github-native
 
-brews:
+homebrew_casks:
   - repository:
       owner: emilrex
       name: homebrew-tap
