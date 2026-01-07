@@ -18,3 +18,11 @@ archives:
 
 changelog:
   use: github-native
+
+brews:
+  - repository:
+      owner: emilrex
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    homepage: https://github.com/emilrex/wt
+    description: Manage isolated git worktrees for parallel Claude Code sessions
