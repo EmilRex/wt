@@ -4,6 +4,14 @@ A CLI for managing isolated git worktrees for parallel Claude Code sessions.
 
 ## Installation
 
+### Homebrew
+
+```bash
+brew install emilrex/tap/wt
+```
+
+### Go
+
 ```bash
 go install github.com/emilrex/wt@latest
 ```
